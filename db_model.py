@@ -6,7 +6,7 @@ class DBReader:
         self.account = self.get_user(name, password)
         self.user_data = None
 
-    def read_file(self):
+    def read_file(self, input=None):
         with open("login_db") as infile:
             return [line.split(',') for line in infile.readlines()]
 
@@ -17,8 +17,6 @@ class DBReader:
         results = self.filter_by_name(name)
         if len(results) > 1:
             raise Exception("Found more than one record for {}".format(name))
-
-
 
     def get_user(self, name, password):
         self.get_by_name(name)

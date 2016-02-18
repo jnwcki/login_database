@@ -1,5 +1,6 @@
 from db_model import DBReader
 
+
 def main_login():
     while True:
         username = input("Please enter your user name: ")
@@ -24,7 +25,6 @@ def main_login():
                         print("Sorry, That User Name Is Already Taken.")
                         new_user = None
                         break
-
 
                 if new_user:
                     user_account.write_to_file(new_user)
